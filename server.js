@@ -11,4 +11,4 @@ app.get('/', function(req, res){
 });
 
 app.listen(7000); //the port you want to use
-console.log("App running...");
+console.log('Your server available at http://localhost:7000');
