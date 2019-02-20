@@ -23,7 +23,7 @@ foreach($files as $file){
 	if (preg_match("#\<body.*\>(.*)\<\/body\>#si", $contents, $body_content)){ //getting content only between <body></body> tags
 		$clean_content = strip_tags($body_content[0]); //remove html tags
 		$clean_content = preg_replace( '/\s+/', ' ', $clean_content ); //remove duplicate whitespaces, carriage returns, tabs, etc
-	
+
 	//$found = strpos_recursive($clean_content, $search_term);
 	$found = strpos_recursive(mb_strtolower($clean_content, 'UTF-8'), $search_term);
 	$final_result[$file_count]['page_title'][] = $page_title[1];
@@ -69,7 +69,7 @@ foreach($files as $file){
     <title>Crysta - Startup Agency and SasS Business Template</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="img/logos/favicon.png" />
+    <link rel="shortcut icon" href="img/logos/favicon.svg" />
     <link rel="apple-touch-icon" href="img/logos/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="img/logos/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="img/logos/apple-touch-icon-114x114.png" />
@@ -86,12 +86,12 @@ foreach($files as $file){
 </head>
 
 <body>
- 
+
 <script type="text/javascript">
-;(function(){	
+;(function(){
 	document.body.onload=resize
 	window.onresize=resize
-	
+
 	function resize(){
 		parent._resize(document.getElementById('search-results').offsetHeight)
 	}
@@ -163,10 +163,10 @@ function get_file_extension($filename){
 	return $result;
 }
 
-function strpos_recursive($haystack, $needle, $offset = 0, &$results = array()) {               
+function strpos_recursive($haystack, $needle, $offset = 0, &$results = array()) {
     $offset = stripos($haystack, $needle, $offset);
     if($offset === false) {
-        return $results;           
+        return $results;
     } else {
         $pattern = '/'.$needle.'/ui';
 	preg_match_all($pattern, $haystack, $results, PREG_OFFSET_CAPTURE);
